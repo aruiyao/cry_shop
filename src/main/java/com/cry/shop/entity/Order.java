@@ -3,7 +3,11 @@ package com.cry.shop.entity;
 public class Order {
     private Integer id;
 
-    private Goods goods;
+    private Integer goodsId;
+
+    private String goodsName;
+
+    private String mainPicture;
 
     private String address;
 
@@ -21,12 +25,28 @@ public class Order {
         this.id = id;
     }
 
-    public Goods getGoods() {
-        return goods;
+    public Integer getGoodsId() {
+        return goodsId;
     }
 
-    public void setGoods(Goods goods) {
-        this.goods = goods;
+    public void setGoodsId(Integer goodsId) {
+        this.goodsId = goodsId;
+    }
+
+    public String getGoodsName() {
+        return goodsName;
+    }
+
+    public void setGoodsName(String goodsName) {
+        this.goodsName = goodsName;
+    }
+
+    public String getMainPicture() {
+        return mainPicture;
+    }
+
+    public void setMainPicture(String mainPicture) {
+        this.mainPicture = mainPicture;
     }
 
     public String getAddress() {
@@ -66,8 +86,12 @@ public class Order {
         StringBuilder builder = new StringBuilder();
         builder.append("Order [id=");
         builder.append(id);
-        builder.append(", goods=");
-        builder.append(goods);
+        builder.append(", goodsId=");
+        builder.append(goodsId);
+        builder.append(", goodsName=");
+        builder.append(goodsName);
+        builder.append(", mainPicture=");
+        builder.append(mainPicture);
         builder.append(", address=");
         builder.append(address);
         builder.append(", leaveWord=");
