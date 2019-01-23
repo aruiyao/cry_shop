@@ -3,6 +3,10 @@ package com.cry.shop.entity;
 public class Order {
     private Integer id;
 
+    private Integer userId;
+
+    private String userName;
+
     private Integer goodsId;
 
     private String goodsName;
@@ -23,6 +27,22 @@ public class Order {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public Integer getGoodsId() {
@@ -86,6 +106,10 @@ public class Order {
         StringBuilder builder = new StringBuilder();
         builder.append("Order [id=");
         builder.append(id);
+        builder.append(", userId=");
+        builder.append(userId);
+        builder.append(", userName=");
+        builder.append(userName);
         builder.append(", goodsId=");
         builder.append(goodsId);
         builder.append(", goodsName=");

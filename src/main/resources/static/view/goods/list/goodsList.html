@@ -19,18 +19,6 @@
 
 <body ng-app="goodsListApp" ng-controller="goodsListCtrl" ng-init="init()" ng-cloak>
   <div class="container" style="margin-bottom:100px">
-    <img ng-src="{{imgUrl}}" style="width: 160px; height:160px;border: 1px solid #cccccc" ng-show="imgName!==''">
-    <form enctype="multipart/form-data" id="uploadForm">
-      <input type="file" name="uploadFile" id="upload_file" style="margin-bottom:10px;">
-      <input type="button" id="uploadPicButton" value="上传" ng-click="uploadImage()">
-    </form>
-
-    <img ng-src="{{multiple_imgUrl}}" style="width: 160px; height:160px;border: 1px solid #cccccc" ng-show="imgName!==''">
-    <form enctype="multipart/form-data" id="uploadForm">
-      <input type="file" name="uploadFile" multiple id="upload_file_multiple" style="margin-bottom:10px;">
-      <input type="button" id="uploadPicButton" value="上传" ng-click="uploadMultpie()">
-    </form>
-
     <div ng-repeat="item in goodsList" style="float:left;width: 200px; height: 300px;float: left;border: 1px solid #cccccc;margin-left: 70px;margin-top: 40px">
       <div style="border-bottom: 1px solid #cccccc;cursor: pointer;">
           <img ng-src="{{downUrl + '?imageName=' + item.mainPicture}}" style="width: 198px;height: 200px;" ng-click="detail(item.id)">

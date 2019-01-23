@@ -30,6 +30,9 @@ app.controller("goodsDetailCtrl", function ($scope, $rootScope, $location) {
       }
     })
   }
+  $scope.goBack = function(){
+    window.location.href="../list/goodsList.html"
+  }
 
   //点击立即购买
   $scope.buy = function () {

@@ -8,8 +8,8 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableAutoConfiguration
 @ComponentScan(value = { "com.cry.shop.controller", "com.cry.shop.service.impl" })
 @MapperScan(value = "com.cry.shop.mapper")
-public class ApplicationController {
+public class ShopApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(ApplicationController.class, args);
+		SpringApplication.run(ShopApplication.class, args);
 	}
 }

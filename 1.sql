@@ -26,12 +26,13 @@ CREATE TABLE `t_goods` (
   `goods_price` varchar(30) NOT NULL,
   `main_picture` varchar(256) NOT NULL,
   `detail_picture` varchar(256) NOT NULL,
+  `create_time` varchar(14) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 /*Data for the table `t_goods` */
 
-insert  into `t_goods`(`id`,`goods_name`,`goods_price`,`main_picture`,`detail_picture`) values (1,'2018新款加绒开衫卫衣男连帽韩版潮帅气青少年冬季学生外套男','211.00','1.jpg','2.jpg|3.jpg|4.jpg'),(2,'2','222','result.png',''),(3,'3','1221','result.png',''),(4,'4','11','',''),(5,'5','4','',''),(6,'6','45','','');
+insert  into `t_goods`(`id`,`goods_name`,`goods_price`,`main_picture`,`detail_picture`,`create_time`) values (11,'1','111','1.jpg','2.jpg|3.jpg|4.jpg','40380123235630');
 
 /*Table structure for table `t_order` */
 
@@ -39,15 +40,21 @@ DROP TABLE IF EXISTS `t_order`;
 
 CREATE TABLE `t_order` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `user_name` varchar(256) NOT NULL,
   `goods_id` int(11) NOT NULL,
+  `goods_name` varchar(256) NOT NULL,
+  `main_picture` varchar(256) NOT NULL,
   `address` varchar(256) NOT NULL,
-  `leaveWord` varchar(256) DEFAULT NULL,
+  `leave_word` varchar(256) DEFAULT NULL,
   `number` int(11) NOT NULL,
-  `totalPrice` varchar(256) NOT NULL,
+  `total_price` varchar(256) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 /*Data for the table `t_order` */
+
+insert  into `t_order`(`id`,`user_id`,`user_name`,`goods_id`,`goods_name`,`main_picture`,`address`,`leave_word`,`number`,`total_price`) values (7,2,'2',1,'2018新款加绒开衫卫衣男连帽韩版潮帅气青少年冬季学生外套男','1.jpg','1',NULL,1,'211.00');
 
 /*Table structure for table `t_users` */
 
@@ -58,11 +65,11 @@ CREATE TABLE `t_users` (
   `user_name` varchar(20) NOT NULL,
   `password` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 /*Data for the table `t_users` */
 
-insert  into `t_users`(`id`,`user_name`,`password`) values (1,'1','1');
+insert  into `t_users`(`id`,`user_name`,`password`) values (1,'101','1'),(2,'2','2');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
