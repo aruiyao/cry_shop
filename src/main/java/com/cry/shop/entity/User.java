@@ -1,10 +1,18 @@
 package com.cry.shop.entity;
 
+/**
+ * 用户实体类
+ * @author CRY
+ *
+ */
 public class User {
+    /**用户id*/
     private Integer id;
 
+    /**学号*/
     private String userName;
 
+    /**密码*/
     private String password;
 
     public Integer getId() {

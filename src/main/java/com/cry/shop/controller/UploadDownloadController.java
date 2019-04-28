@@ -55,16 +55,17 @@ public class UploadDownloadController {
         }
         return "";
     }
+
     @RequestMapping(value = "/uploadMultpie", method = RequestMethod.POST)
-    public List<String> uploadMultpie(@RequestBody MultipartFile[] files) throws RuntimeException {
-        List<String> filleNames = new ArrayList<String>();
-        if (files.length==0) {
+    public List < String > uploadMultpie(@RequestBody MultipartFile[] files) throws RuntimeException {
+        List < String > filleNames = new ArrayList < String >();
+        if (files.length == 0) {
             System.out.println("文件不能为空");
             return null;
         }
         for (int i = 0; i < files.length; i++) {
             MultipartFile file = files[i];
-            
+
             // 获取文件名
             String fileName = file.getOriginalFilename();
             System.out.println("上传的文件名为：" + fileName);

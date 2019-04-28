@@ -11,6 +11,9 @@ app.controller("goodsListCtrl", function ($scope, $rootScope) {
       url: "/getGoodsList",
       type: "GET",
       contentType: "application/json",
+      data: {
+        goodsStatus: 1
+      },
       // dataType: "json",
       success: function (data) {
         $rootScope.$apply(function () {

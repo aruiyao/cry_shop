@@ -14,6 +14,13 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
+    /**   
+     * @Title: 创建订单   
+     * @Description: TODO(这里用一句话描述这个方法的作用)   
+     * @param order
+     * @return      
+     * @throws   
+     */
     @RequestMapping(value = "/createOrder")
     @ResponseBody
     public Order createOrder(@RequestBody Order order) {

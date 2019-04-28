@@ -16,15 +16,29 @@ public class GoodsController {
     @Autowired
     private GoodsService goodsService;
 
+    /**   
+     * @Title: 查询商品列表   
+     * @Description: TODO(这里用一句话描述这个方法的作用)   
+     * @param req
+     * @return      
+     * @throws   
+     */
     @GetMapping(value = "/getGoodsList")
     @ResponseBody
-    public GetGoodsListResponse getGoodsList() {
+    public GetGoodsListResponse getGoodsList(Goods req) {
         GetGoodsListResponse rsp = new GetGoodsListResponse();
-        List < Goods > goodsList = goodsService.getGoodsList();
+        List < Goods > goodsList = goodsService.getGoodsList(req);
         rsp.setGoodsList(goodsList);
         return rsp;
     }
     
+    /**   
+     * @Title: 根据商品ID查询商品详情   
+     * @Description: TODO(这里用一句话描述这个方法的作用)   
+     * @param req
+     * @return      
+     * @throws   
+     */
     @GetMapping(value = "/queryGoodsDetail")
     @ResponseBody
     public Goods queryGoodsDetail(Goods req) {

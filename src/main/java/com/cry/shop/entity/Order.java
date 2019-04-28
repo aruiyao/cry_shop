@@ -1,25 +1,33 @@
 package com.cry.shop.entity;
 
+/**
+ * 订单实体类
+ * @author CRY
+ *
+ */
 public class Order {
+    /**订单id*/
     private Integer id;
-
+    /**用户id*/
     private Integer userId;
-
+    /**用户学号*/
     private String userName;
-
+    /**商品id*/
     private Integer goodsId;
-
+    /**商品名称*/
     private String goodsName;
-
+    /**商品主图*/
     private String mainPicture;
-
+    /**收货地址*/
     private String address;
-
+    /**买家留言*/
     private String leaveWord;
-
+    /**购买数量*/
     private Integer number;
-
+    /**订单总额*/
     private String totalPrice;
+    /**订单创建时间*/
+    private String createTime;
 
     public Integer getId() {
         return id;
@@ -101,6 +109,14 @@ public class Order {
         this.totalPrice = totalPrice;
     }
 
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
@@ -124,6 +140,8 @@ public class Order {
         builder.append(number);
         builder.append(", totalPrice=");
         builder.append(totalPrice);
+        builder.append(", createTime=");
+        builder.append(createTime);
         builder.append("]");
         return builder.toString();
     }

@@ -1,6 +1,6 @@
 /*
 SQLyog Ultimate v11.25 (64 bit)
-MySQL - 5.5.14 : Database - bishe_shop
+MySQL - 5.5.62 : Database - bishe_shop
 *********************************************************************
 */
 
@@ -22,17 +22,18 @@ DROP TABLE IF EXISTS `t_goods`;
 
 CREATE TABLE `t_goods` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `goods_name` varchar(30) NOT NULL,
+  `goods_name` varchar(256) NOT NULL,
   `goods_price` varchar(30) NOT NULL,
   `main_picture` varchar(256) NOT NULL,
   `detail_picture` varchar(256) NOT NULL,
   `create_time` varchar(14) NOT NULL,
+  `goods_status` int(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 /*Data for the table `t_goods` */
 
-insert  into `t_goods`(`id`,`goods_name`,`goods_price`,`main_picture`,`detail_picture`,`create_time`) values (11,'1','111','1.jpg','2.jpg|3.jpg|4.jpg','40380123235630');
+insert  into `t_goods`(`id`,`goods_name`,`goods_price`,`main_picture`,`detail_picture`,`create_time`,`goods_status`) values (1,'年货节 手工网红曲奇饼干礼盒伴手礼铁盒装 春节过年特产置办零食','119.00','2_1.jpg','2_2.jpg|2_3.jpg|2_4.jpg','20190130223650',1),(2,'【三只松鼠_年货坚果大礼包1473g/8袋】每日坚果礼盒零食干果送礼','88.00','3_1.jpg','3_2.jpg|3_3.jpg|3_4.jpg','20190130223957',1),(3,'马克华菲圆领休闲套头韩版男士卫衣','100.00','1_1.jpg','1_2.jpg|1_3.jpg|1_4.jpg','20190130224729',1);
 
 /*Table structure for table `t_order` */
 
@@ -49,12 +50,11 @@ CREATE TABLE `t_order` (
   `leave_word` varchar(256) DEFAULT NULL,
   `number` int(11) NOT NULL,
   `total_price` varchar(256) NOT NULL,
+  `create_time` varchar(14) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `t_order` */
-
-insert  into `t_order`(`id`,`user_id`,`user_name`,`goods_id`,`goods_name`,`main_picture`,`address`,`leave_word`,`number`,`total_price`) values (7,2,'2',1,'2018新款加绒开衫卫衣男连帽韩版潮帅气青少年冬季学生外套男','1.jpg','1',NULL,1,'211.00');
 
 /*Table structure for table `t_users` */
 
@@ -65,11 +65,11 @@ CREATE TABLE `t_users` (
   `user_name` varchar(20) NOT NULL,
   `password` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 /*Data for the table `t_users` */
 
-insert  into `t_users`(`id`,`user_name`,`password`) values (1,'101','1'),(2,'2','2');
+insert  into `t_users`(`id`,`user_name`,`password`) values (1,'101','1');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

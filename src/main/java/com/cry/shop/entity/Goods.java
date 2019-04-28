@@ -3,14 +3,19 @@ package com.cry.shop.entity;
 public class Goods {
     private Integer id;
 
+    /**商品名称*/
     private String goodsName;
 
+    /**商品价格*/
     private String goodsPrice;
 
+    /**商品主图*/
     private String mainPicture;
 
+    /**详情图片*/
     private String detailPicture;
 
+    /**创建时间*/
     private String createTime;
 
     /**商品状态 0:下架  1：上架*/

@@ -6,7 +6,7 @@ import com.cry.shop.entity.Goods;
 
 public interface GoodsService {
 
-    List < Goods > getGoodsList();
+    List < Goods > getGoodsList(Goods req);
 
     Goods queryGoodsDetail(Goods req);
 

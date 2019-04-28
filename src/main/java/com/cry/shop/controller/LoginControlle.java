@@ -26,6 +26,14 @@ public class LoginControlle {
     @Autowired
     private LoginService loginService;
 
+    /**   
+     * @Title: 用户登录   
+     * @Description: TODO(这里用一句话描述这个方法的作用)   
+     * @param req
+     * @param request
+     * @return      
+     * @throws   
+     */
     @PostMapping(value = "/login")
     @ResponseBody
     public User login(@RequestBody LoginRequset req, HttpServletRequest request) {
@@ -34,6 +42,7 @@ public class LoginControlle {
         if (user == null) {
             user = new User();
         }
+        request.getSession().setMaxInactiveInterval(3600);
         HttpSession session = request.getSession();// 这就是session的创建
         session.setAttribute("userName", user.getUserName());
         session.setAttribute("id", user.getId());
@@ -41,6 +50,12 @@ public class LoginControlle {
         return user;
     }
 
+    /**   
+     * @Title: 退出登录   
+     * @Description: TODO(这里用一句话描述这个方法的作用)   
+     * @param request      
+     * @throws   
+     */
     @GetMapping(value = "/logout")
     @ResponseBody
     public void logout(HttpServletRequest request) {
@@ -48,6 +63,13 @@ public class LoginControlle {
         session.invalidate();
     }
 
+    /**   
+     * @Title: 获取登录的用户信息   
+     * @Description: TODO(这里用一句话描述这个方法的作用)   
+     * @param request
+     * @return      
+     * @throws   
+     */
     @GetMapping(value = "/getUserInfo")
     @ResponseBody
     public User getUserInfo(HttpServletRequest request) {

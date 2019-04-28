@@ -11,7 +11,7 @@ app.controller("indexCtrl", function ($scope, $rootScope) {
     $scope.changeFrameHeight();
   }
   $scope.init = function () {
-    $scope.pageUrl = "../goods/list/goodsList.html"
+    $scope.changeUrl("../goods/list/goodsList.html");
     $.ajax({
       url: "/getUserInfo",
       type: "GET",
@@ -27,6 +27,9 @@ app.controller("indexCtrl", function ($scope, $rootScope) {
       }
     })
   };
+  $scope.changeUrl = function(url){
+    $("#iframepage").attr("src",url);
+  }
   $scope.login = function () {
     window.location.href = "/view/login/login.html"
   }

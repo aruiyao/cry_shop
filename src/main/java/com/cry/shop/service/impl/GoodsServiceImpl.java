@@ -15,8 +15,8 @@ public class GoodsServiceImpl implements GoodsService {
     private GoodsMapper goodsMapper;
 
     @Override
-    public List < Goods > getGoodsList() {
-        return goodsMapper.getGoodsList();
+    public List < Goods > getGoodsList(Goods req) {
+        return goodsMapper.getGoodsList(req);
     }
 
     @Override

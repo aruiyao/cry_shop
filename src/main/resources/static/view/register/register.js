@@ -12,20 +12,35 @@ app.controller("registerCtrl", function ($scope, $rootScope, $timeout) {
         invalid: 'glyphicon glyphicon-remove',
         validating: 'glyphicon glyphicon-refresh'
       },
-      submitButtons: '#login-submit',
       fields: {
         userName: {
           validators: {
             notEmpty: {
               message: '用户名不能为空'
-            }
+            },       
+            remote: { 
+              url: '/checkUser', //验证地址
+              message: '学号已存在', //提示消息
+              delay: 1000, 
+              type: 'GET', //请求方式
+              data: function (validator) {
+                return {
+                  userName: $scope.userName,
+                };
+              }
+            },
           }
         },
         password: {
           validators: {
             notEmpty: {
               message: '密码不能为空'
-            }
+            },
+            stringLength: {
+              min: 6,
+              max: 20,
+              message: '密码长度必须在6到20之间'
+            },
           }
         },
         repassword: {

@@ -16,4 +16,9 @@ public class RegisterServiceImpl implements RegisterService {
     public void AddUser(User user) {
         registerMapper.AddUser(user);
     }
+
+    @Override
+    public int checkUser(User user) {
+        return registerMapper.checkUser(user);
+    }
 }

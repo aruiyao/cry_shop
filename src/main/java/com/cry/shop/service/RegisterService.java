@@ -6,4 +6,6 @@ public interface RegisterService {
 
     void AddUser(User user);
 
+    int checkUser(User user);
+
 }
